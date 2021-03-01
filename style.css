@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +7,20 @@
 }
 
 body {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.wrapper {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  height: 80vh;
+  width: 90vw;
   background-color: hsl(273, 75%, 66%);
   background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
   font-size: 12px;
@@ -16,19 +31,15 @@ body {
   align-items: center;
 }
 
-.container {
+.faqPage {
   background-color: white;
-  width: 1440px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
+  /* grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 1px 1px;
-  grid-template-areas: "a b";
-}
-
-.leftColumn,
-.rightColumn {
-  padding: 10px 5px;
+  grid-template-areas: "a b"; */
+  border-radius: 25px;
 }
 
 .leftColumn {
@@ -36,12 +47,82 @@ body {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  grid-area: a;
+  /* grid-area: a; */
+  display: flex;
+  justify-content: center;
 }
 
-#womanIllustrationDesktop {
+#womanImage {
+  position: relative;
+  left: -18%;
+  margin-left: -100px;
+  overflow: hidden;
+}
+
+#boxImage {
+  position: relative;
+  height: fit-content;
+  left: 8%;
+  top: 40%;
+  z-index: 1;
 }
 
 .rightColumn {
-  grid-area: b;
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 25px;
+}
+
+.rightColumn > h1 {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.qAndA {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.questions {
+  background-color: white;
+  border: none;
+  border-top: 1px solid hsl(238, 29%, 16%);
+  outline: none;
+  cursor: pointer;
+  padding: 12px 0;
+  transition: 0.4s;
+  text-align: left;
+  width: 100%;
+}
+
+.questions:after {
+  content: "˅";
+  float: right;
+}
+
+.active,
+.questions:hover {
+  color: orange;
+  font-weight: 700;
+}
+
+.active:after {
+  content: "˄";
+  float: right;
+}
+
+.answers {
+  width: 320px;
+  padding-top: -2px;
+  padding-bottom: 12px;
+  font-size: 0.9em;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+  text-align: left;
 }
