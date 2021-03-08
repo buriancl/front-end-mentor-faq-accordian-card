@@ -21,6 +21,7 @@ body {
 .container {
   height: 80vh;
   width: 90vw;
+  min-width: 750px;
   background-color: hsl(273, 75%, 66%);
   background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
   font-size: 12px;
@@ -35,11 +36,9 @@ body {
   background-color: white;
   display: flex;
   justify-content: space-between;
-  /* grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 1px 1px;
-  grid-template-areas: "a b"; */
   border-radius: 25px;
+  max-height: 50%;
+  overflow: hidden;
 }
 
 .leftColumn {
@@ -47,23 +46,29 @@ body {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  /* grid-area: a; */
   display: flex;
   justify-content: center;
+  overflow: hidden;
+  position: relative;
+  width: 340px;
 }
 
 #womanImage {
-  position: relative;
-  left: -18%;
-  margin-left: -100px;
-  overflow: hidden;
+  width: 100%;
+  position: absolute;
+  left: -10%;
+  top: 50%;
+  transform: translateY(-50%);
+  justify-content: center;
 }
 
 #boxImage {
-  position: relative;
-  height: fit-content;
-  left: 8%;
-  top: 40%;
+  position: absolute;
+  left: -16%;
+  top: 75%;
+  transform: translateY(-75%);
+  width: 140px;
+  height: auto;
   z-index: 1;
 }
 
@@ -73,7 +78,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-right: 25px;
+  margin: 25px;
 }
 
 .rightColumn > h1 {
